@@ -6,7 +6,7 @@ import java.util.TimeZone;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.crud.mapper-api"})
+@SpringBootApplication(scanBasePackages = {"com.crud.mapper"})
 public class MapperApplication {
 	@Value("${application.timezone:UTC}")
 	private String timeZone;
