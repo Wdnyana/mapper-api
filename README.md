@@ -1,17 +1,18 @@
-## Project Brief: To-Do List API with Java Spring Boot, MongoDB, and MapStruct
+# Project Brief: To-Do List API with Java Spring Boot, MongoDB, and MapStruct
 
-# 1. Short Description
+## 1. Short Description
 You will build a To-Do List API using Spring Boot, MongoDB as the database, and MapStruct to map entities to DTOs. This API will have CRUD (Create, Read, Update, Delete) features for managing task lists.
 
-# 2. Key Features
+## 2. Key Features
 Add tasks with complete attributes.
 Retrieve all tasks or filter them (e.g., by status: completed/pending).
 Update tasks (modify description, status, or deadline).
 Delete tasks from the list.
-3. Data Model & MongoDB Relationships
+
+##3. Data Model & MongoDB Relationships
 MongoDB is NoSQL, so data will be stored in collections instead of tables. You will have two main collections:
 
-# Collection 1: tasks (Task List)
+### Collection 1: tasks (Task List)
 Used to store task information.
 
 | #  | Field       | Data Type     | Description                                         |
@@ -27,7 +28,7 @@ Used to store task information.
 | 9  | `userId`   | `ObjectId`    | Reference to the user who created the task.       |
 
 
-# Relationships
+### Relationships
 tasks → users (One user can have multiple tasks, but each task belongs to only one user).
 Collection 2: users (Users)
 Used to store user information.
@@ -40,8 +41,8 @@ Used to store user information.
 | 4 | password	        | String	                     | Hashed password.               | 
 | 5 | createdAt	        | LocalDateTime	               | Account creation timestamp.    | 
 
-#4. API Endpoints
-Here is the list of required endpoints:
+## 4. API Endpoints
+### Here is the list of required endpoints:
 
 ```
 Task Management (/api/tasks)
@@ -58,10 +59,10 @@ GET	/api/users/{id}	Retrieve user data by ID.
 ```
 
 
-# 5. MapStruct Usage
+## 5. MapStruct Usage
 MapStruct will be used to map data from entities to DTOs, preventing direct database data exposure to clients.
 
-DTOs to be used:
+### DTOs to be used:
 ```
 TaskRequestDto → Data sent from the client to the server when creating or updating a task.
 TaskResponseDto → Data returned to the client (excluding technical details like MongoDB ObjectId).
@@ -72,9 +73,9 @@ Format dueDate as yyyy-MM-dd HH:mm before sending it to the frontend.
 Return task status in lowercase ("completed" instead of "COMPLETED").
 ```
 
-# 6. Technologies Used
-Spring Boot (Main framework)
-Spring Data MongoDB (Integration with MongoDB)
-MapStruct (Mapper for DTOs)
-Spring Web (To build REST API)
-Spring Validation (For input validation)
+## 6. Technologies Used
+- Spring Boot (Main framework)
+- Spring Data MongoDB (Integration with MongoDB)
+- MapStruct (Mapper for DTOs)
+- Spring Web (To build REST API)
+- Spring Validation (For input validation)
