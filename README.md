@@ -33,12 +33,12 @@ Collection 2: users (Users)
 Used to store user information.
 
 | # | Field	            | Data Type	                 | Description                  |
-| 1 |-----------------|----------------------------|--------------------------------|
-| 2 | _id	              | ObjectId	                   | Unique user ID.                | 
-| 3 | username	        | String	                     | Username.                      | 
-| 4 | email	            | String	                     | User email.                    | 
-| 5 | password	        | String	                     | Hashed password.               | 
-| 6 | createdAt	        | LocalDateTime	               | Account creation timestamp.    | 
+|---|-----------------|----------------------------|--------------------------------|
+| 1 | _id	              | ObjectId	                   | Unique user ID.                | 
+| 2 | username	        | String	                     | Username.                      | 
+| 3 | email	            | String	                     | User email.                    | 
+| 4 | password	        | String	                     | Hashed password.               | 
+| 5 | createdAt	        | LocalDateTime	               | Account creation timestamp.    | 
 
 #4. API Endpoints
 Here is the list of required endpoints:
