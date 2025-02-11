@@ -12,7 +12,21 @@ import java.time.format.DateTimeFormatter;
 
 @Mapper(componentModel = "spring")
 public interface IUserMapper {
+    @Mapping(target = "username", qualifiedByName = "validateRequireUsername")
     Users saveNewUser(CreateDataUserRequest request);
+
+    @Named("validateRequireUsername")
+    default String validateRequireUsername(String username) {
+            if (username == null || username.trim().isEmpty()) {
+                throw new IllegalArgumentException("Username cannot be null or empty");
+            }
+
+            if (username.trim().length() < 3) {
+                throw new IllegalArgumentException("Username must be at least 3 characters");
+            }
+
+            return username.trim();
+    }
 
     @Named("convertDateToString")
     default String convertDateToString(LocalDateTime date) {
